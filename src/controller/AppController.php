@@ -36,11 +36,9 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   public function landing() {
 
     if (empty($this->cf_user->id)) {
-
       $renderArray = [
         '#theme' => 'udb3_anonymous_landing',
       ];
-
     }
     else {
       $renderArray = [

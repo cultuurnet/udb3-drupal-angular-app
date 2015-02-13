@@ -16,16 +16,6 @@ culturefeed_udb3_app.search:
   requirements:
     _culturefeed_current_user: 'TRUE'
 
-culturefeed_udb3_app.new_event:
-  path: '/udb3/event/new'
-  defaults:
-    _title: 'Nieuw evenement aanmaken'
-    _controller: '\Drupal\culturefeed_udb3_app\Controller\EventController::newEvent'
-  options:
-    _access_mode: 'ANY'
-  requirements:
-    _culturefeed_current_user: 'TRUE'
-
 culturefeed_udb3_app.landing:
   path: '/udb3'
   defaults:
@@ -36,3 +26,12 @@ culturefeed_udb3_app.landing:
   requirements:
     _access: 'TRUE'
 
+culturefeed_udb3_app.add_event:
+  path: '/udb3/event/add'
+  defaults:
+    _title: 'Nieuw evenement aanmaken'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::addEvent'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
