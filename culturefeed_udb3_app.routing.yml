@@ -19,7 +19,7 @@ culturefeed_udb3_app.search:
 culturefeed_udb3_app.landing:
   path: '/udb3'
   defaults:
-    _title: 'UDB3'
+    _title_callback: '\Drupal\culturefeed_udb3_app\Controller\AppController::getLandingTitle'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::landing'
   options:
     _access_mode: 'ANY'

@@ -43,17 +43,28 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
     else {
       $renderArray = [
         '#theme' => 'udb3_dashboard',
-        '#username' => $this->cf_user->nick,
         '#attached' => [
           'library' => [
             'culturefeed_udb3_app/udb3-angular'
           ]
-        ]
+        ],
       ];
     }
 
     return $renderArray;
 
+  }
+
+  /**
+   * Get the title for the landing page.
+   */
+  public function getLandingTitle() {
+    if (!empty($this->cf_user->id)) {
+      return 'Dashboard';
+    }
+    else {
+      return '';
+    }
   }
 
 }
