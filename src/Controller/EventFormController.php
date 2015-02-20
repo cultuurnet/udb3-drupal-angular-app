@@ -19,7 +19,7 @@ class EventFormController extends ControllerBase {
       '#theme' => 'udb3_event_form',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
+          'culturefeed_udb3_app/udb3_angular'
         ]
       ]
     ];
