@@ -42,11 +42,13 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
     'base://' . drupal_get_path('module', 'culturefeed_udb3_app') . '/bower_components/udb3-angular',
     array('absolute' => TRUE)
   );
+  global $base_url;
 
   $page['#attached']['drupalSettings']['culturefeed_udb3_app']['appConfig'] = [
     'baseUrl' => $apiPath,
     'baseApiUrl' => $apiPath,
     'udb3BaseUrl' => $udb3BasePath,
+    'udb3DashboardUrl' => $base_url,
     'authUrl' => $urlGenerator->generateFromRoute(
       'culturefeed.oauth.connect',
       array(),
