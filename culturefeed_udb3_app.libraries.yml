@@ -17,14 +17,15 @@ udb3-angular:
     bower_components/socket.io-client/socket.io.js: {}
     bower_components/accounting/accounting.js: {}
     bower_components/udb3-angular/dist/udb3-angular.js: {}
+    bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js: {}
+    bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.nl-BE.js: {}
+    bower_components/bootstrap-multiselect/dist/js/bootstrap-multiselect.js: {}
     angular/app.js: {}
     angular/app.controller.js: {}
-    angular/header.controller.js: {}
-    angular/main.controller.js: {}
-    angular/new-event.controller.js: {}
   css:
     theme:
       bower_components/angular-ui-select/dist/select.css: {}
       bower_components/components-font-awesome/css/font-awesome.css: {}
+      bower_components/bootstrap-multiselect/dist/css/bootstrap-multiselect.css: {}
   dependencies:
     - core/drupalSettings
