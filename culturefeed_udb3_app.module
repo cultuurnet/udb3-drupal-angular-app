@@ -47,8 +47,8 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
   $page['#attached']['drupalSettings']['culturefeed_udb3_app']['appConfig'] = [
     'baseUrl' => $apiPath,
     'baseApiUrl' => $apiPath,
-    'udb3BaseUrl' => $udb3BasePath,
-    'udb3DashboardUrl' => $base_url,
+    'udb3JsBaseUrl' => $udb3BasePath,
+    'udb3BaseUrl' => $base_url,
     'authUrl' => $urlGenerator->generateFromRoute(
       'culturefeed.oauth.connect',
       array(),
