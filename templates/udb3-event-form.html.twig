@@ -1,4 +1,6 @@
-<div>
+<div ng-controller="EventFormCtrl as eventForm" id="event-form" data-type="event" data-id="{{item_id}}">
+
+  <div ng-if="loaded">
 
   <udb-event-form-step1></udb-event-form-step1>
   <udb-event-form-step2></udb-event-form-step2>
@@ -8,6 +10,8 @@
 
   <div id="last-updated" style="display: none;">
     Automatisch bewaard om <span></span> uur
+  </div>
+
   </div>
 
 </div>

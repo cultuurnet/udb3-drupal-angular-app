@@ -55,6 +55,20 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
 
   }
 
+
+  public function viewEvent() {
+
+      return [
+        '#theme' => 'udb3_dashboard',
+        '#attached' => [
+          'library' => [
+            'culturefeed_udb3_app/udb3-angular'
+          ]
+        ],
+      ];
+
+  }
+
   /**
    * Get the title for the landing page.
    */

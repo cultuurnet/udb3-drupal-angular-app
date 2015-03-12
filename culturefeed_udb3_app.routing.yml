@@ -35,3 +35,23 @@ culturefeed_udb3_app.add_event:
     _access_mode: 'ANY'
   requirements:
     _culturefeed_current_user: 'TRUE'
+
+culturefeed_udb3_app.edit_event:
+  path: '/udb3/event/edit/{id}'
+  defaults:
+    _title: 'Evenement aanpassen'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::editEvent'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
+culturefeed_udb3_app.view_event:
+  path: '/udb3/event/{cdbid}'
+  defaults:
+    _title: 'Evenement bekijken'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewEvent'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
