@@ -9,7 +9,6 @@ namespace Drupal\culturefeed_udb3_app\Controller;
 
 use Broadway\Repository\AggregateNotFoundException;
 use CultuurNet\UDB3\EntityServiceInterface;
-use CultuurNet\UDB3\EventServiceInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
