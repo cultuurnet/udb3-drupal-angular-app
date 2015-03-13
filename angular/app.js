@@ -20,7 +20,9 @@
     .run(function (udbApi) {
       udbApi.getMe();
     })
-    .constant('appConfig', settings.appConfig);
+    .constant('appConfig', settings.appConfig)
+    .constant('itemId', settings.itemId || null)
+    .constant('offerType', settings.offerType || null);
 
   udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
     'queryFieldTranslations', 'dutchTranslations'];

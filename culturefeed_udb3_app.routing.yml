@@ -26,7 +26,7 @@ culturefeed_udb3_app.landing:
   requirements:
     _access: 'TRUE'
 
-culturefeed_udb3_app.add_event:
+culturefeed_udb3_app.add.event:
   path: '/udb3/event/add'
   defaults:
     _title: 'Nieuw evenement aanmaken'
@@ -36,20 +36,40 @@ culturefeed_udb3_app.add_event:
   requirements:
     _culturefeed_current_user: 'TRUE'
 
-culturefeed_udb3_app.edit_event:
+culturefeed_udb3_app.edit.event:
   path: '/udb3/event/edit/{id}'
   defaults:
-    _title: 'Evenement aanpassen'
+    _title: 'Event aanpassen'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::editEvent'
   options:
     _access_mode: 'ANY'
   requirements:
     _culturefeed_current_user: 'TRUE'
 
-culturefeed_udb3_app.view_event:
-  path: '/udb3/event/{cdbid}'
+culturefeed_udb3_app.edit.place:
+  path: '/udb3/place/edit/{id}'
+  defaults:
+    _title: 'Locatie aanpassen'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\PlaceFormController::editPlace'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
+culturefeed_udb3_app.view.event:
+  path: '/udb3/event/{id}'
   defaults:
     _title: 'Evenement bekijken'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewEvent'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
+culturefeed_udb3_app.view.place:
+  path: '/udb3/place/{id}'
+  defaults:
+    _title: 'Locatie bekijken'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewEvent'
   options:
     _access_mode: 'ANY'
