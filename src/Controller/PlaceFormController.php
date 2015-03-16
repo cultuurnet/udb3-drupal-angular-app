@@ -9,10 +9,10 @@ namespace Drupal\culturefeed_udb3_app\Controller;
 
 use Broadway\Repository\AggregateNotFoundException;
 use CultuurNet\UDB3\EntityServiceInterface;
-use CultuurNet\UDB3\EventServiceInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Controller for the place form (update)
@@ -31,7 +31,7 @@ class PlaceFormController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('culturefeed_udb3.event.service')
+      $container->get('culturefeed_udb3.place.service')
     );
   }
 
@@ -41,7 +41,7 @@ class PlaceFormController extends ControllerBase {
    * @param EntityServiceInterface $entityService
    *   The place service.
    */
-  public function __construct(EventServiceInterface $entityService) {
+  public function __construct(EntityServiceInterface $entityService) {
     $this->entityService = $entityService;
   }
 
@@ -54,21 +54,21 @@ class PlaceFormController extends ControllerBase {
       $this->entityService->getEntity($id);
     }
     catch (AggregateNotFoundException $e) {
-      return new \Symfony\Component\HttpFoundation\Response('', 404);
+      throw new NotFoundHttpException();
     }
     catch (Exception $e) {
       return new Response($e->getMessage(), 400);
     }
 
     return [
-      '#theme' => 'udb3_place_form',
+      '#theme' => 'udb3_event_form',
       '#attached' => [
         'library' => [
           'culturefeed_udb3_app/udb3-angular'
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'itemId' => $id,
+            'eventId' => $id,
             'offerType' => 'place'
           ]
         ]

@@ -37,7 +37,7 @@ culturefeed_udb3_app.add.event:
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.edit.event:
-  path: '/udb3/event/edit/{id}'
+  path: '/udb3/event/{id}/edit'
   defaults:
     _title: 'Event aanpassen'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::editEvent'
@@ -47,7 +47,7 @@ culturefeed_udb3_app.edit.event:
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.edit.place:
-  path: '/udb3/place/edit/{id}'
+  path: '/udb3/place/{id}/edit'
   defaults:
     _title: 'Locatie aanpassen'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\PlaceFormController::editPlace'

@@ -7,13 +7,14 @@
 
 namespace Drupal\culturefeed_udb3_app\Controller;
 
-use CultuurNet\UDB3\EventNotFoundException as EventNotFoundException2;
+use CultuurNet\UDB3\EventNotFoundException;
 use CultuurNet\UDB3\EventServiceInterface;
-use CultuurNet\UDB3\UDB2\EventNotFoundException;
+use CultuurNet\UDB3\UDB2\EventNotFoundException as UDB2EventNotFoundException;
 use Drupal\Core\Controller\ControllerBase;
 use Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Controller for the event form (add / update)
@@ -68,11 +69,11 @@ class EventFormController extends ControllerBase {
     try {
       $this->eventService->getEvent($id);
     }
-    catch (EventNotFoundException $e) {
-      return new Response('', 404);
+    catch (UDB2EventNotFoundException $e) {
+      throw new NotFoundHttpException();
     }
-    catch (EventNotFoundException2 $e) {
-      return new Response('', 404);
+    catch (EventNotFoundException $e) {
+      throw new NotFoundHttpException();
     }
     catch (Exception $e) {
       return new Response($e->getMessage(), 400);
@@ -86,28 +87,8 @@ class EventFormController extends ControllerBase {
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'itemId' => $id,
+            'eventId' => $id,
             'offerType' => 'event'
-          ]
-        ]
-      ]
-    ];
-  }
-
-  /**
-   * Edit a place.
-   */
-  public function editPlace($id) {
-    return [
-      '#theme' => 'udb3_place_form',
-      '#attached' => [
-        'library' => [
-          'culturefeed_udb3_app/udb3-angular'
-        ],
-        'drupalSettings' => [
-          'culturefeed_udb3_app' => [
-            'itemId' => $id,
-            'offerType' => 'place'
           ]
         ]
       ]
