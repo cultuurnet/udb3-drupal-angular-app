@@ -21,7 +21,7 @@
       udbApi.getMe();
     })
     .constant('appConfig', settings.appConfig)
-    .constant('itemId', settings.itemId || null)
+    .constant('eventId', settings.eventId || null)
     .constant('offerType', settings.offerType || null);
 
   udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
