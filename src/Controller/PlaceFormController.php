@@ -68,7 +68,7 @@ class PlaceFormController extends ControllerBase {
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'itemId' => $id,
+            'eventId' => $id,
             'offerType' => 'place'
           ]
         ]
