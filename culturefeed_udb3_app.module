@@ -20,6 +20,11 @@ function culturefeed_udb3_app_theme() {
       'variables' => array(
         'item_id' => NULL,
       ),
+    ),
+    'udb3_event_view' => array(
+      'variables' => array(
+        'item_id' => NULL,
+      ),
     )
   );
 }

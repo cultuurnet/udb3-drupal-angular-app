@@ -56,16 +56,22 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
 
-  public function viewEvent() {
+  public function viewEvent($id) {
 
-      return [
-        '#theme' => 'udb3_dashboard',
-        '#attached' => [
-          'library' => [
-            'culturefeed_udb3_app/udb3-angular'
-          ]
+    return [
+      '#theme' => 'udb3_event_view',
+      '#attached' => [
+        'library' => [
+          'culturefeed_udb3_app/udb3-angular'
         ],
-      ];
+        'drupalSettings' => [
+          'culturefeed_udb3_app' => [
+            'itemId' => $id,
+            //'offerType' => 'event'
+          ]
+        ]
+      ],
+    ];
 
   }
 
