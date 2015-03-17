@@ -70,7 +70,7 @@ culturefeed_udb3_app.view.place:
   path: '/udb3/place/{id}'
   defaults:
     _title: 'Locatie bekijken'
-    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewEvent'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewPlace'
   options:
     _access_mode: 'ANY'
   requirements:

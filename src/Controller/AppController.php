@@ -56,6 +56,9 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
 
+  /**
+   * Function to view an event detail.
+   */
   public function viewEvent($id) {
 
     return [
@@ -66,8 +69,29 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'itemId' => $id,
-            //'offerType' => 'event'
+            'eventId' => $id,
+            'offerType' => 'event'
+          ]
+        ]
+      ],
+    ];
+
+  }
+
+  /**
+   * Function to view a place detail.
+   */
+  public function viewPlace($id) {
+    return [
+      '#theme' => 'udb3_place_view',
+      '#attached' => [
+        'library' => [
+          'culturefeed_udb3_app/udb3-angular'
+        ],
+        'drupalSettings' => [
+          'culturefeed_udb3_app' => [
+            'placeId' => $id,
+            'offerType' => 'place'
           ]
         ]
       ],
