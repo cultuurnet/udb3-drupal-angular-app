@@ -32,7 +32,6 @@
                         queryFieldTranslations, dutchTranslations) {
 
     //$locationProvider.html5Mode(true);
-
     $sceDelegateProvider.resourceUrlWhitelist([
       'self',
       appConfig.baseUrl + '**'
