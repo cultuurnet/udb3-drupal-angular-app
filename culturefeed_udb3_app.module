@@ -56,14 +56,6 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
   );
   global $base_url;
 
-  $cdbid = \Drupal::routeMatch()->getParameter('cdbid');
-  $offer_type = NULL;
-  if (!empty($cdbid)) {
-    $route_name = \Drupal::routeMatch()->getRouteName();
-    $route_parts = explode('.', $route_name);
-    $offer_type = end($route_parts);
-  }
-
   $page['#attached']['drupalSettings']['culturefeed_udb3_app']['appConfig'] = [
     'baseUrl' => $apiPath,
     'baseApiUrl' => $apiPath,
