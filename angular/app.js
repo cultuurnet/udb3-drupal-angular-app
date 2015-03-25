@@ -21,6 +21,7 @@
       udbApi.getMe();
     })
     .constant('appConfig', settings.appConfig)
+    .constant('moment', moment)
     .constant('eventId', settings.eventId || null)
     .constant('placeId', settings.placeId || null)
     .constant('offerType', settings.offerType || null);
