@@ -75,3 +75,4 @@ culturefeed_udb3_app.view.place:
     _access_mode: 'ANY'
   requirements:
     _culturefeed_current_user: 'TRUE'
+    
