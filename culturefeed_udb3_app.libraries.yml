@@ -1,32 +1,32 @@
 udb3-angular:
   version: 0.0.0
   js:
-    bower_components/jquery/dist/jquery.js: {}
-    bower_components/angular/angular.js: {}
-    bower_components/angular-animate/angular-animate.js: {}
-    bower_components/angular-bootstrap/ui-bootstrap.js: {}
-    bower_components/angular-bootstrap/ui-bootstrap-tpls.js: {}
-    bower_components/angular-cookies/angular-cookies.js: {}
+    bower_components/jquery/dist/jquery.min.js: {}
+    bower_components/angular/angular.min.js: {}
+    bower_components/angular-animate/angular-animate.min.js: {}
+    bower_components/angular-bootstrap/ui-bootstrap.min.js: {}
+    bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js: {}
+    bower_components/angular-cookies/angular-cookies.min.js: {}
     bower_components/angular-i18n/angular-locale_nl-be.js: {}
-    bower_components/angular-sanitize/angular-sanitize.js: {}
-    bower_components/angular-socket-io/socket.js: {}
-    bower_components/angular-translate/angular-translate.js: {}
-    bower_components/angular-ui-select/dist/select.js: {}
-    bower_components/lodash/dist/lodash.js: {}
-    bower_components/moment/moment.js: {}
+    bower_components/angular-sanitize/angular-sanitize.min.js: {}
+    bower_components/angular-socket-io/socket.min.js: {}
+    bower_components/angular-translate/angular-translate.min.js: {}
+    bower_components/angular-ui-select/dist/select.min.js: {}
+    bower_components/lodash/dist/lodash.min.js: {}
+    bower_components/moment/min/moment.min.js: {}
     bower_components/socket.io-client/socket.io.js: {}
-    bower_components/accounting/accounting.js: {}
-    bower_components/udb3-angular/dist/udb3-angular.js: {}
+    bower_components/accounting/accounting.min.js: {}
+    bower_components/udb3-angular/dist/udb3-angular.min.js: {}
     bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js: {}
     bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.nl-BE.js: {}
     bower_components/bootstrap-multiselect/dist/js/bootstrap-multiselect.js: {}
-    bower_components/ng-file-upload/angular-file-upload-shim.js: {}
-    bower_components/ng-file-upload/angular-file-upload.js: {}
+    bower_components/ng-file-upload/angular-file-upload-shim.min.js: {}
+    bower_components/ng-file-upload/angular-file-upload.min.js: {}
     angular/app.js: {}
     angular/app.controller.js: {}
   css:
     theme:
-      bower_components/angular-ui-select/dist/select.css: {}
+      bower_components/angular-ui-select/dist/select.min.css: {}
       bower_components/bootstrap-multiselect/dist/css/bootstrap-multiselect.css: {}
   dependencies:
     - core/drupalSettings

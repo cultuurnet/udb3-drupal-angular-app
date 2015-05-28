@@ -60,7 +60,7 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
     'baseUrl' => $apiPath,
     'baseApiUrl' => $apiPath,
     'udb3JsBaseUrl' => $udb3BasePath,
-    'udb3BaseUrl' => $base_url,
+    'udb3BaseUrl' => $base_url . '/udb3',
     'authUrl' => $urlGenerator->generateFromRoute(
       'culturefeed.oauth.connect',
       array(),
