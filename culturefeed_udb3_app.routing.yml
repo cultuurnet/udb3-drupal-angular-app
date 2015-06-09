@@ -44,6 +44,7 @@ culturefeed_udb3_app.edit.event:
   options:
     _access_mode: 'ANY'
   requirements:
+    _udb3_edit_acces_check: 'TRUE'
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.edit.place:
@@ -54,6 +55,7 @@ culturefeed_udb3_app.edit.place:
   options:
     _access_mode: 'ANY'
   requirements:
+    _udb3_edit_acces_check: 'TRUE'
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.view.event:
@@ -75,4 +77,3 @@ culturefeed_udb3_app.view.place:
     _access_mode: 'ANY'
   requirements:
     _culturefeed_current_user: 'TRUE'
-    
