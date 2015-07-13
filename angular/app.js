@@ -26,19 +26,11 @@
     .constant('placeId', settings.placeId || null)
     .constant('offerType', settings.offerType || null);
 
-  udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', '$locationProvider', 'uiSelectConfig', 'appConfig',
+  udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
     'queryFieldTranslations', 'dutchTranslations'];
 
-  function udbAppConfig($sceDelegateProvider, $translateProvider, $locationProvider, uiSelectConfig, appConfig,
+  function udbAppConfig($sceDelegateProvider, $translateProvider, uiSelectConfig, appConfig,
                         queryFieldTranslations, dutchTranslations) {
-
-    // Enable html5 mode for pages that have tabbed content.
-    if (appConfig.enableHtml5Mode) {
-      $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });
-    }
 
     $sceDelegateProvider.resourceUrlWhitelist([
       'self',
