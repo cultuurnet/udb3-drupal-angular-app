@@ -95,9 +95,6 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
           'culturefeed_udb3_app' => [
             'placeId' => $id,
             'offerType' => 'place',
-            'appConfig' => [
-              'enableHtml5Mode' => TRUE,
-            ]
           ]
         ]
       ],
