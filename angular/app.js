@@ -11,7 +11,6 @@
    */
   angular
     .module('udbApp', [
-      'ngAnimate',
       'ngCookies',
       'ngSanitize',
       'udb.core'
