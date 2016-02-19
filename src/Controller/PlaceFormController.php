@@ -31,7 +31,7 @@ class PlaceFormController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('culturefeed_udb3.place.service')
+      $container->get('culturefeed_udb3.place_service')
     );
   }
 

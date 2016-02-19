@@ -33,7 +33,7 @@ class EventFormController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('culturefeed_udb3.event.service')
+      $container->get('culturefeed_udb3.event_service')
     );
   }
 
