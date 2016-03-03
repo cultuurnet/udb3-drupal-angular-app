@@ -16,8 +16,17 @@
       'udb.core'
     ])
     .config(udbAppConfig)
-    .run(function (udbApi) {
+    .run(function (udbApi, $rootScope, $window) {
       udbApi.getMe();
+
+      $rootScope.$on('$locationChangeStart', redirectOnLocationChange);
+
+      function redirectOnLocationChange(event, newUrl, oldUrl) {
+        if (oldUrl && newUrl !== oldUrl) {
+          event.preventDefault();
+          $window.location.href = newUrl;
+        }
+      }
     })
     .constant('appConfig', settings.appConfig)
     .constant('moment', moment)
@@ -26,10 +35,10 @@
     .constant('offerType', settings.offerType || null);
 
   udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
-    'queryFieldTranslations', 'dutchTranslations'];
+    'queryFieldTranslations', 'dutchTranslations', '$locationProvider'];
 
   function udbAppConfig($sceDelegateProvider, $translateProvider, uiSelectConfig, appConfig,
-                        queryFieldTranslations, dutchTranslations) {
+                        queryFieldTranslations, dutchTranslations, $locationProvider) {
 
     $sceDelegateProvider.resourceUrlWhitelist([
       'self',
@@ -45,5 +54,9 @@
     // end of translation configuration
 
     uiSelectConfig.theme = 'bootstrap';
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: true
+    });
   }
 })(drupalSettings.culturefeed_udb3_app);
