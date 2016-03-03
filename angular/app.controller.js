@@ -12,24 +12,24 @@
     .module('udbApp')
     .controller('AppCtrl', AppController);
 
-  AppController.$inject = ['$scope', 'appConfig'];
+  AppController.$inject = ['$scope', '$rootScope', '$location'];
 
-  function AppController($scope, appConfig) {
-
-    $scope.searchQuery = '';
+  function AppController($scope, $rootScope, $location) {
     $scope.showJobLog = false;
-    $scope.startSearch = startSearch;
 
     function toggleJobLog() {
       $scope.showJobLog = !$scope.showJobLog;
     }
 
-    /**
-     * Start a search on drupal.
-     */
-    function startSearch() {
-      window.location.href = '/udb3/search#?query=' + $scope.searchQuery;
-    }
+    $rootScope.$on('searchQueryChanged', function (event, searchQuery) {
+      var searchParameters = {};
+
+      if (searchQuery.queryString) {
+        searchParameters.query = searchQuery.queryString;
+      }
+
+      $location.path('/search').search(searchParameters);
+    });
 
     $scope.toggleJobLog = toggleJobLog;
   }
