@@ -27,6 +27,7 @@ udb3-angular:
     bower_components/ng-file-upload/ng-file-upload-shim.min.js: {}
     bower_components/ng-file-upload/ng-file-upload.min.js: {}
     angular/app.js: {}
+    angular/drupal-router.module.js: {}
     angular/app.controller.js: {}
     angular/header.controller.js: {}
     angular/main.controller.js: {}

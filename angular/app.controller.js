@@ -14,22 +14,12 @@
 
   AppController.$inject = ['$scope', '$rootScope', '$location'];
 
-  function AppController($scope, $rootScope, $location) {
+  function AppController($scope) {
     $scope.showJobLog = false;
 
     function toggleJobLog() {
       $scope.showJobLog = !$scope.showJobLog;
     }
-
-    $rootScope.$on('searchQueryChanged', function (event, searchQuery) {
-      var searchParameters = {};
-
-      if (searchQuery.queryString) {
-        searchParameters.query = searchQuery.queryString;
-      }
-
-      $location.path('/search').search(searchParameters);
-    });
 
     $scope.toggleJobLog = toggleJobLog;
   }
