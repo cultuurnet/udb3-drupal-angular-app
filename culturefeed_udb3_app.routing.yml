@@ -17,7 +17,7 @@ culturefeed_udb3_app.search:
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.landing:
-  path: '/udb3'
+  path: '/udb3/landing'
   defaults:
     _title_callback: '\Drupal\culturefeed_udb3_app\Controller\AppController::getLandingTitle'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::landing'
