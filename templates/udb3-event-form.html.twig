@@ -1,13 +1,11 @@
-<div ng-controller="EventFormController as eventForm" ng-cloak class="offer-form">
+<div ng-controller="EventFormController as eventForm">
+    <div class="offer-form" ng-if="loaded">
+        <udb-event-form-step1></udb-event-form-step1>
+        <udb-event-form-step2></udb-event-form-step2>
+        <udb-event-form-step3></udb-event-form-step3>
+        <udb-event-form-step4></udb-event-form-step4>
+        <udb-event-form-step5></udb-event-form-step5>
 
-  <udb-event-form-step1></udb-event-form-step1>
-  <udb-event-form-step2></udb-event-form-step2>
-  <udb-event-form-step3></udb-event-form-step3>
-  <udb-event-form-step4></udb-event-form-step4>
-  <udb-event-form-step5></udb-event-form-step5>
-
-  <div id="last-updated" style="display: none;">
-    Automatisch bewaard om <span></span> uur
-  </div>
-
+        <udb-event-form-save-time-tracker></udb-event-form-save-time-tracker>
+    </div>
 </div>
