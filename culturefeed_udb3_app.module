@@ -71,15 +71,3 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
     'uploadCopyRightInfoUrl' => $udb3AppSettings->get('upload_copy_right_info_url'),
   ];
 }
-
-/**
- * Implements hook_user_login().
- */
-function culturefeed_udb3_app_user_login($account) {
-
-  $url = "/udb3/search";
-  $response = new Symfony\Component\HttpFoundation\RedirectResponse($url);
-  $response->send();
-  return;
-
-}
