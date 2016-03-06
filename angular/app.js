@@ -11,10 +11,10 @@
    */
   angular
     .module('udbApp', [
-      'ngAnimate',
       'ngCookies',
       'ngSanitize',
-      'udb.core'
+      'udb.core',
+      'udbApp.drupal-router'
     ])
     .config(udbAppConfig)
     .run(function (udbApi) {

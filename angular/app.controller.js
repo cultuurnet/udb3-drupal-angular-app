@@ -12,23 +12,13 @@
     .module('udbApp')
     .controller('AppCtrl', AppController);
 
-  AppController.$inject = ['$scope', 'appConfig'];
+  AppController.$inject = ['$scope', '$rootScope', '$location'];
 
-  function AppController($scope, appConfig) {
-
-    $scope.searchQuery = '';
+  function AppController($scope) {
     $scope.showJobLog = false;
-    $scope.startSearch = startSearch;
 
     function toggleJobLog() {
       $scope.showJobLog = !$scope.showJobLog;
-    }
-
-    /**
-     * Start a search on drupal.
-     */
-    function startSearch() {
-      window.location.href = '/udb3/search#?query=' + $scope.searchQuery;
     }
 
     $scope.toggleJobLog = toggleJobLog;

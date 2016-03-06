@@ -9,6 +9,7 @@ namespace Drupal\culturefeed_udb3_app\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class AppController extends ControllerBase implements ContainerInjectionInterface {
 
@@ -41,14 +42,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
       ];
     }
     else {
-      $renderArray = [
-        '#theme' => 'udb3_dashboard',
-        '#attached' => [
-          'library' => [
-            'culturefeed_udb3_app/udb3-angular'
-          ]
-        ],
-      ];
+      return new RedirectResponse('/udb3/search');
     }
 
     return $renderArray;
