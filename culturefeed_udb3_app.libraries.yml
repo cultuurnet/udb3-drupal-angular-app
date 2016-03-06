@@ -3,29 +3,31 @@ udb3-angular:
   js:
     bower_components/jquery/dist/jquery.min.js: {}
     bower_components/angular/angular.js: {}
-    bower_components/angular-bootstrap/ui-bootstrap.min.js: {}
-    bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js: {}
+    bower_components/bootstrap/dist/js/bootstrap.js: {}
     bower_components/angular-cookies/angular-cookies.min.js: {}
-    bower_components/angular-i18n/angular-locale_nl-be.js: {}
-    bower_components/angular-moment/angular-moment.min.js: {}
     bower_components/angular-sanitize/angular-sanitize.min.js: {}
-    bower_components/angular-socket-io/socket.min.js: {}
     bower_components/angular-translate/angular-translate.min.js: {}
-    bower_components/angular-ui-select/dist/select.min.js: {}
-    bower_components/angular-ui-codemirror/ui-codemirror.min.js: {}
-    bower_components/angular-xeditable/dist/js/xeditable.min.js: {}
-    bower_components/codemirror/lib/codemirror.js: {}
-    bower_components/levenshtein/lib/levenshtein.js: {}
+    bower_components/angular-ui-select/dist/select.js: {}
+    bower_components/angular-i18n/angular-locale_nl-be.js: {}
+    bower_components/angular-bootstrap/ui-bootstrap.min.js: {}
+    bower_components/angular-socket-io/socket.min.js: {}
     bower_components/lodash/lodash.min.js: {}
-    bower_components/moment/min/moment.min.js: {}
     bower_components/socket.io-client/socket.io.js: {}
+    bower_components/moment/min/moment.min.js: {}
+    bower_components/moment/locale/nl.js: {}
     bower_components/accounting/accounting.min.js: {}
-    bower_components/udb3-angular/dist/udb3-angular.js: {}
     bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js: {}
     bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.nl-BE.js: {}
     bower_components/bootstrap-multiselect/dist/js/bootstrap-multiselect.js: {}
-    bower_components/ng-file-upload/ng-file-upload-shim.min.js: {}
     bower_components/ng-file-upload/ng-file-upload.min.js: {}
+    bower_components/codemirror/lib/codemirror.js: {}
+    bower_components/codemirror/mode/solr/solr.js: {}
+    bower_components/angular-ui-codemirror/ui-codemirror.min.js: {}
+    bower_components/angular-moment/angular-moment.min.js: {}
+    bower_components/angular-xeditable/dist/js/xeditable.min.js: {}
+    bower_components/levenshtein/lib/levenshtein.js: {}
+    bower_components/udb3-angular/dist/udb3-angular.js: {}
+    bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js: {}
     angular/app.js: {}
     angular/drupal-router.module.js: {}
     angular/app.controller.js: {}
@@ -34,10 +36,13 @@ udb3-angular:
     angular/new-event.controller.js: {}
   css:
     theme:
-      bower_components/animate.css/animate.min.css: {}
       bower_components/angular-ui-select/dist/select.min.css: {}
+      bower_components/bootstrap-datepicker/css/datepicker.css: {}
+      bower_components/bootstrap-datepicker/css/datepicker3.css: {}
       bower_components/bootstrap-multiselect/dist/css/bootstrap-multiselect.css: {}
+      bower_components/animate.css/animate.min.css: {}
       bower_components/codemirror/lib/codemirror.css: {}
+      bower_components/angular-xeditable/dist/css/xeditable.css: {}
   dependencies:
     - core/drupalSettings
     - culturefeed_udb3_app/font-awesome
