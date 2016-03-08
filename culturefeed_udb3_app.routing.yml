@@ -26,6 +26,26 @@ culturefeed_udb3_app.landing:
   requirements:
     _access: 'TRUE'
 
+culturefeed_udb3_app.copyright:
+  path: '/udb3/copyright'
+  defaults:
+    _title: 'Copyright'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewCopyright'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _access: 'TRUE'
+
+culturefeed_udb3_app.user_agreement:
+  path: '/udb3/user-agreement'
+  defaults:
+    _title: 'Gebruikersovereenkomst'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::viewUserAgreement'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _access: 'TRUE'
+
 culturefeed_udb3_app.add.event:
   path: '/udb3/event/add'
   defaults:

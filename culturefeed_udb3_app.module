@@ -11,6 +11,12 @@ function culturefeed_udb3_app_theme() {
     'udb3_anonymous_landing' => array(
       'variables' => array(),
     ),
+    'udb3_copyright' => array(
+      'variables' => array(),
+    ),
+    'udb3_user_agreement' => array(
+      'variables' => array(),
+    ),
     'udb3_dashboard' => array(
       'variables' => array(
         'username' => '',
@@ -67,7 +73,9 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
       array('absolute' => TRUE)
     ),
     'socketUrl' => $udb3AppSettings->get('websocket_server'),
-    'uploadTermsConditionsUrl' => $udb3AppSettings->get('upload_terms_conditions_url'),
-    'uploadCopyRightInfoUrl' => $udb3AppSettings->get('upload_copy_right_info_url'),
+    'media' => [
+      'userAgreementUrl' => $udb3AppSettings->get('user_agreement_url'),
+      'copyrightUrl' => $udb3AppSettings->get('copyright_url'),
+    ]
   ];
 }

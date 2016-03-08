@@ -94,6 +94,24 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
+   * Function to view the copyright.
+   */
+  public function viewCopyright() {
+    return [
+      '#theme' => 'udb3_copyright',
+    ];
+  }
+
+  /**
+   * Function to view the user agreement.
+   */
+  public function viewUserAgreement() {
+    return [
+      '#theme' => 'udb3_user_agreement',
+    ];
+  }
+
+  /**
    * Get the title for the landing page.
    */
   public function getLandingTitle() {
