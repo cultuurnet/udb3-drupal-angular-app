@@ -9,8 +9,5 @@
   },
   "description": "udb3 Drupal App",
   "license": "MIT",
-  "private": true,
-  "resolutions": {
-    "udb3-angular": "feature/III-749"
-  }
+  "private": true
 }
