@@ -43,6 +43,7 @@ udb3-angular:
       bower_components/animate.css/animate.min.css: {}
       bower_components/codemirror/lib/codemirror.css: {}
       bower_components/angular-xeditable/dist/css/xeditable.css: {}
+      bower_components/udb3-angular/dist/udb3-angular.css: {}
   dependencies:
     - core/drupalSettings
     - culturefeed_udb3_app/font-awesome
