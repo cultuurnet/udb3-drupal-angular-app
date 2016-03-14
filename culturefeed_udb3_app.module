@@ -76,6 +76,7 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
     'media' => [
       'userAgreementUrl' => $udb3AppSettings->get('user_agreement_url'),
       'copyrightUrl' => $udb3AppSettings->get('copyright_url'),
-    ]
+    ],
+    'gaTagManager' => ['containerId' =>$udb3AppSettings->get('ga_tag_manager.container_id')],
   ];
 }
