@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains Drupal\culturefeed_udb3_app\Controller\AppController.
- */
 
 namespace Drupal\culturefeed_udb3_app\Controller;
 
@@ -11,12 +7,19 @@ use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+/**
+ * Class AppController.
+ *
+ * @package Drupal\culturefeed_udb3_app\Controller
+ */
 class AppController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
+   * The culturefeed user.
+   *
    * @var \CultureFeed_User
    */
-  protected $cf_user;
+  protected $cfUser;
 
   /**
    * {@inheritdoc}
@@ -27,8 +30,14 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
     );
   }
 
+  /**
+   * AppController constructor.
+   *
+   * @param \CultureFeed_User $cf_user
+   *   The culturefeed user.
+   */
   public function __construct(\CultureFeed_User $cf_user) {
-    $this->cf_user = $cf_user;
+    $this->cfUser = $cf_user;
   }
 
   /**
@@ -36,7 +45,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
    */
   public function landing() {
 
-    if (empty($this->cf_user->id)) {
+    if (empty($this->cfUser->id)) {
       $renderArray = [
         '#theme' => 'udb3_anonymous_landing',
       ];
@@ -59,14 +68,14 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
       '#theme' => 'udb3_event_view',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
+          'culturefeed_udb3_app/udb3-angular',
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
             'eventId' => $id,
             'offerType' => 'event',
-          ]
-        ]
+          ],
+        ],
       ],
     ];
 
@@ -80,14 +89,14 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
       '#theme' => 'udb3_place_view',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
+          'culturefeed_udb3_app/udb3-angular',
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
             'placeId' => $id,
             'offerType' => 'place',
-          ]
-        ]
+          ],
+        ],
       ],
     ];
 
@@ -115,7 +124,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
    * Get the title for the landing page.
    */
   public function getLandingTitle() {
-    if (!empty($this->cf_user->id)) {
+    if (!empty($this->cfUser->id)) {
       return 'Dashboard';
     }
     else {

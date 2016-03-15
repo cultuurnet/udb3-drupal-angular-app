@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\culturefeed_udb3_app\Controller\EventFormController.
- */
-
 namespace Drupal\culturefeed_udb3_app\Controller;
 
 use CultuurNet\UDB3\EventNotFoundException;
@@ -17,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Controller for the event form (add / update)
+ * Controller for the event form (add / update).
  */
 class EventFormController extends ControllerBase {
 
@@ -55,9 +50,9 @@ class EventFormController extends ControllerBase {
       '#theme' => 'udb3_event_form',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
-        ]
-      ]
+          'culturefeed_udb3_app/udb3-angular',
+        ],
+      ],
     ];
   }
 
@@ -83,15 +78,15 @@ class EventFormController extends ControllerBase {
       '#theme' => 'udb3_event_form',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
+          'culturefeed_udb3_app/udb3-angular',
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
             'eventId' => $id,
-            'offerType' => 'event'
-          ]
-        ]
-      ]
+            'offerType' => 'event',
+          ],
+        ],
+      ],
     ];
   }
 

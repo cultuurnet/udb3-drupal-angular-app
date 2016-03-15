@@ -1,9 +1,15 @@
 <?php
 
 /**
+ * @file
+ * The culturefeed udb3 app module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function culturefeed_udb3_app_theme() {
+
   return array(
     'udb3_search' => array(
       'variables' => array(),
@@ -36,14 +42,16 @@ function culturefeed_udb3_app_theme() {
       'variables' => array(
         'place_id' => NULL,
       ),
-    )
+    ),
   );
+
 }
 
 /**
  * Implements hook_page_attachments().
  */
 function culturefeed_udb3_app_page_attachments(array &$page) {
+
   $udb3AppSettings = Drupal::config('culturefeed_udb3_app.settings');
 
   /** @var \Drupal\Core\Routing\UrlGeneratorInterface $urlGenerator */
@@ -77,6 +85,7 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
       'userAgreementUrl' => $udb3AppSettings->get('user_agreement_url'),
       'copyrightUrl' => $udb3AppSettings->get('copyright_url'),
       'fileSizeLimit' => $udb3AppSettings->get('file_size_limit'),
-    ]
+    ],
   ];
+
 }

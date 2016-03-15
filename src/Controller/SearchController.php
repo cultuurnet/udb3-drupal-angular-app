@@ -1,34 +1,35 @@
 <?php
-/**
- * @file
- * Contains Drupal\culturefeed_udb3_app\Controller\SearchController.
- */
 
 namespace Drupal\culturefeed_udb3_app\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 
+/**
+ * Class SearchController.
+ *
+ * @package Drupal\culturefeed_udb3_app\Controller
+ */
 class SearchController extends ControllerBase implements ContainerInjectionInterface {
 
+  /**
+   * Set the search template.
+   *
+   * @return array
+   *   The render array.
+   */
   public function search() {
-
-    $baseTag = [
-      '#type' => 'html_tag',
-      '#tag' => 'base',
-      '#attributes' => ['href' => '/']
-    ];
 
     $renderArray = [
       '#theme' => 'udb3_search',
-      '#content' => Array('Hello', 'world'),
+      '#content' => array('Hello', 'world'),
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
-        ]
-      ]
+          'culturefeed_udb3_app/udb3-angular',
+        ],
+      ],
     ];
-    
+
     return $renderArray;
 
   }

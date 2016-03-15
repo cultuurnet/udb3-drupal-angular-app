@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\culturefeed_udb3_app\Controller\EventFormController.
- */
-
 namespace Drupal\culturefeed_udb3_app\Controller;
 
 use Broadway\Repository\AggregateNotFoundException;
@@ -15,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Controller for the place form (update)
+ * Controller for the place form (update).
  */
 class PlaceFormController extends ControllerBase {
 
@@ -64,15 +59,15 @@ class PlaceFormController extends ControllerBase {
       '#theme' => 'udb3_event_form',
       '#attached' => [
         'library' => [
-          'culturefeed_udb3_app/udb3-angular'
+          'culturefeed_udb3_app/udb3-angular',
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
             'placeId' => $id,
-            'offerType' => 'place'
-          ]
-        ]
-      ]
+            'offerType' => 'place',
+          ],
+        ],
+      ],
     ];
   }
 
