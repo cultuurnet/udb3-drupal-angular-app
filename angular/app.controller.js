@@ -12,7 +12,7 @@
     .module('udbApp')
     .controller('AppCtrl', AppController);
 
-  AppController.$inject = ['$scope', '$rootScope', '$location'];
+  AppController.$inject = ['$scope'];
 
   function AppController($scope) {
     $scope.showJobLog = false;
