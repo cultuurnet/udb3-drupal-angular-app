@@ -14,7 +14,8 @@
       'ngCookies',
       'ngSanitize',
       'udb.core',
-      'udbApp.drupal-router'
+      'udbApp.drupal-router',
+      'udbApp.ga-tag-manager'
     ])
     .config(udbAppConfig)
     .run(function (udbApi) {

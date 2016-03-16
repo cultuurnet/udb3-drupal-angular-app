@@ -30,6 +30,7 @@ udb3-angular:
     bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js: {}
     angular/app.js: {}
     angular/drupal-router.module.js: {}
+    angular/ga-tag-manager.module.js: {}
     angular/app.controller.js: {}
     angular/header.controller.js: {}
     angular/main.controller.js: {}
