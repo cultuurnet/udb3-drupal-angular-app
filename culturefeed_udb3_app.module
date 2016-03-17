@@ -87,7 +87,10 @@ function culturefeed_udb3_app_page_attachments(array &$page) {
       'fileSizeLimit' => $udb3AppSettings->get('file_size_limit'),
     ],
     'gaTagManager' => ['containerId' =>$udb3AppSettings->get('ga_tag_manager.container_id')],
-    'omdDate' => $udb3AppSettings->get('omd_date')
+    'calendarHighlight' => [
+      'date' => $udb3AppSettings->get('calendar_highlight.date'),
+      'extraClass' => $udb3AppSettings->get('calendar_highlight.extra_class')
+    ]
   ];
 
 }
