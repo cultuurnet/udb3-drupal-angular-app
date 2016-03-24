@@ -58,7 +58,6 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
 
   }
 
-
   /**
    * Function to view an event detail.
    */
