@@ -16,6 +16,7 @@
 
   function AppController($scope) {
     $scope.showJobLog = false;
+    $scope.excludeFooter = !!drupalSettings.culturefeed_udb3_app.excludeFooter;
 
     function toggleJobLog() {
       $scope.showJobLog = !$scope.showJobLog;
