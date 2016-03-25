@@ -52,6 +52,11 @@ class EventFormController extends ControllerBase {
         'library' => [
           'culturefeed_udb3_app/udb3-angular',
         ],
+        'drupalSettings' => [
+          'culturefeed_udb3_app' => [
+            'excludeFooter' => TRUE,
+          ],
+        ],
       ],
     ];
   }
@@ -84,6 +89,7 @@ class EventFormController extends ControllerBase {
           'culturefeed_udb3_app' => [
             'eventId' => $id,
             'offerType' => 'event',
+            'excludeFooter' => TRUE,
           ],
         ],
       ],
