@@ -5,6 +5,7 @@ namespace Drupal\culturefeed_udb3_app\Controller;
 use Broadway\Repository\AggregateNotFoundException;
 use CultuurNet\UDB3\EntityServiceInterface;
 use Drupal\Core\Controller\ControllerBase;
+use Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -65,6 +66,7 @@ class PlaceFormController extends ControllerBase {
           'culturefeed_udb3_app' => [
             'placeId' => $id,
             'offerType' => 'place',
+            'excludeFooter' => TRUE,
           ],
         ],
       ],
