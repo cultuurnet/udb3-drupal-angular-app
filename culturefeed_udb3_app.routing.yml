@@ -36,6 +36,16 @@ culturefeed_udb3_app.copyright:
   requirements:
     _access: 'TRUE'
 
+culturefeed_udb3_app.dashboard:
+  path: '/udb3/dashboard'
+  defaults:
+    _title: 'Dashboard'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::dashboard'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
 culturefeed_udb3_app.user_agreement:
   path: '/udb3/user-agreement'
   defaults:

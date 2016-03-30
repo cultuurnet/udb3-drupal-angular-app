@@ -41,6 +41,22 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
+   * Show the dashboard.
+   */
+  public function dashboard() {
+
+    return [
+      '#theme' => 'udb3_dashboard',
+      '#attached' => [
+        'library' => [
+          'culturefeed_udb3_app/udb3-angular',
+        ],
+      ],
+    ];
+
+  }
+
+  /**
    * Show the landing page.
    */
   public function landing() {
