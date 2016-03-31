@@ -41,20 +41,34 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
-   * Show the landing page.
+   * Show the dashboard.
+   */
+  public function dashboard() {
+
+    return [
+      '#theme' => 'udb3_dashboard',
+      '#attached' => [
+        'library' => [
+          'culturefeed_udb3_app/udb3-angular',
+        ],
+      ],
+    ];
+
+  }
+
+  /**
+   * Show the landing page or redirect to dashboard.
    */
   public function landing() {
 
     if (empty($this->cfUser->id)) {
-      $renderArray = [
+      return [
         '#theme' => 'udb3_anonymous_landing',
       ];
     }
     else {
-      return new RedirectResponse('/udb3/search');
+      return new RedirectResponse('/udb3/dashboard');
     }
-
-    return $renderArray;
 
   }
 

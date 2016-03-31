@@ -36,6 +36,16 @@ culturefeed_udb3_app.copyright:
   requirements:
     _access: 'TRUE'
 
+culturefeed_udb3_app.dashboard:
+  path: '/udb3/dashboard'
+  defaults:
+    _title: 'Dashboard'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::dashboard'
+  options:
+    _access_mode: 'ANY'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
 culturefeed_udb3_app.user_agreement:
   path: '/udb3/user-agreement'
   defaults:
@@ -47,7 +57,7 @@ culturefeed_udb3_app.user_agreement:
     _access: 'TRUE'
 
 culturefeed_udb3_app.add.event:
-  path: '/udb3/event/add'
+  path: '/udb3/event'
   defaults:
     _title: 'Nieuw evenement aanmaken'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::addEvent'
@@ -64,7 +74,6 @@ culturefeed_udb3_app.edit.event:
   options:
     _access_mode: 'ANY'
   requirements:
-    _udb3_edit_acces_check: 'TRUE'
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.edit.place:
@@ -75,7 +84,6 @@ culturefeed_udb3_app.edit.place:
   options:
     _access_mode: 'ANY'
   requirements:
-    _udb3_edit_acces_check: 'TRUE'
     _culturefeed_current_user: 'TRUE'
 
 culturefeed_udb3_app.view.event:

@@ -24,9 +24,7 @@ function culturefeed_udb3_app_theme() {
       'variables' => array(),
     ),
     'udb3_dashboard' => array(
-      'variables' => array(
-        'username' => '',
-      ),
+      'variables' => array(),
     ),
     'udb3_event_form' => array(
       'variables' => array(
