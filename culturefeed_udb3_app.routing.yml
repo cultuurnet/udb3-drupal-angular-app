@@ -57,7 +57,7 @@ culturefeed_udb3_app.user_agreement:
     _access: 'TRUE'
 
 culturefeed_udb3_app.add.event:
-  path: '/udb3/event/add'
+  path: '/udb3/event'
   defaults:
     _title: 'Nieuw evenement aanmaken'
     _controller: '\Drupal\culturefeed_udb3_app\Controller\EventFormController::addEvent'
