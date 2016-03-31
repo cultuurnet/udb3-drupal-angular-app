@@ -57,7 +57,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
-   * Show the landing page.
+   * Show the landing page or redirect to dashboard.
    */
   public function landing() {
 
