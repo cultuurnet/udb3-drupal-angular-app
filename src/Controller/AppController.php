@@ -67,7 +67,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
       ];
     }
     else {
-      return new RedirectResponse('/udb3/search');
+      return new RedirectResponse('/udb3/dashboard');
     }
 
     return $renderArray;
