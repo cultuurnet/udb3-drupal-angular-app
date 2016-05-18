@@ -67,7 +67,7 @@ class EventFormController extends ControllerBase {
   public function editEvent($id) {
 
     try {
-      $this->eventService->getEvent($id);
+      $event = json_decode($this->eventService->getEvent($id));
     }
     catch (UDB2EventNotFoundException $e) {
       throw new NotFoundHttpException();
@@ -87,7 +87,7 @@ class EventFormController extends ControllerBase {
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'eventId' => $id,
+            'eventId' => $event->{'@id'},
             'offerType' => 'event',
             'excludeFooter' => TRUE,
           ],

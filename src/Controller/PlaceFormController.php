@@ -47,7 +47,7 @@ class PlaceFormController extends ControllerBase {
   public function editPlace($id) {
 
     try {
-      $this->entityService->getEntity($id);
+      $event = json_decode($this->entityService->getEntity($id));
     }
     catch (AggregateNotFoundException $e) {
       throw new NotFoundHttpException();
@@ -64,7 +64,7 @@ class PlaceFormController extends ControllerBase {
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'placeId' => $id,
+            'placeId' => $event->{'@id'},
             'offerType' => 'place',
             'excludeFooter' => TRUE,
           ],
