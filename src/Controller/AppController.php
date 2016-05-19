@@ -2,6 +2,8 @@
 
 namespace Drupal\culturefeed_udb3_app\Controller;
 
+use CultureFeed_User;
+use CultuurNet\UDB3\EntityServiceInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -22,11 +24,27 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   protected $cfUser;
 
   /**
+   * The event service.
+   *
+   * @var \CultuurNet\UDB3\EntityServiceInterface
+   */
+  protected $eventService;
+
+  /**
+   * The place service.
+   *
+   * @var \CultuurNet\UDB3\EntityServiceInterface
+   */
+  protected $placeService;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('culturefeed.current_user')
+      $container->get('culturefeed.current_user'),
+      $container->get('culturefeed_udb3.event_service'),
+      $container->get('culturefeed_udb3.place_service')
     );
   }
 
@@ -35,9 +53,19 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
    *
    * @param \CultureFeed_User $cf_user
    *   The culturefeed user.
+   * @param \CultuurNet\UDB3\EntityServiceInterface $event_service
+   *   The event service.
+   * @param \CultuurNet\UDB3\EntityServiceInterface $place_service
+   *   The place service.
    */
-  public function __construct(\CultureFeed_User $cf_user) {
+  public function __construct(
+      CultureFeed_User $cf_user,
+      EntityServiceInterface $event_service,
+      EntityServiceInterface $place_service
+  ) {
     $this->cfUser = $cf_user;
+    $this->eventService = $event_service;
+    $this->placeService = $place_service;
   }
 
   /**
@@ -77,6 +105,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
    */
   public function viewEvent($id) {
 
+    $event = json_decode($this->eventService->getEntity($id));
     return [
       '#theme' => 'udb3_event_view',
       '#attached' => [
@@ -85,7 +114,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'eventId' => $id,
+            'eventId' => $event->{'@id'},
             'offerType' => 'event',
           ],
         ],
@@ -98,6 +127,8 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
    * Function to view a place detail.
    */
   public function viewPlace($id) {
+
+    $place = json_decode($this->placeService->getEntity($id));
     return [
       '#theme' => 'udb3_place_view',
       '#attached' => [
@@ -106,7 +137,7 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
         ],
         'drupalSettings' => [
           'culturefeed_udb3_app' => [
-            'placeId' => $id,
+            'placeId' => $place->{'@id'},
             'offerType' => 'place',
           ],
         ],
