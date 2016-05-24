@@ -2,8 +2,8 @@
 
 namespace Drupal\culturefeed_udb3_app\Controller;
 
-use CultuurNet\UDB3\EventNotFoundException;
-use CultuurNet\UDB3\EventServiceInterface;
+use CultuurNet\UDB3\Event\EventNotFoundException;
+use CultuurNet\UDB3\Event\EventServiceInterface;
 use CultuurNet\UDB3\UDB2\EventNotFoundException as UDB2EventNotFoundException;
 use Drupal\Core\Controller\ControllerBase;
 use Exception;
@@ -19,7 +19,7 @@ class EventFormController extends ControllerBase {
   /**
    * The event service.
    *
-   * @var EventServiceInterface
+   * @var \CultuurNet\UDB3\Event\EventServiceInterface
    */
   protected $eventService;
 
@@ -35,7 +35,7 @@ class EventFormController extends ControllerBase {
   /**
    * Construct the controller.
    *
-   * @param EventServiceInterface $event_service
+   * @param \CultuurNet\UDB3\Event\EventServiceInterface $event_service
    *   The event service.
    */
   public function __construct(EventServiceInterface $event_service) {
