@@ -41,6 +41,9 @@ function culturefeed_udb3_app_theme() {
         'place_id' => NULL,
       ),
     ),
+    'udb3_saved_searches' => array(
+      'variables' => array(),
+    ),
   );
 
 }

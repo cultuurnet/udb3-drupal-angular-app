@@ -101,6 +101,22 @@ class AppController extends ControllerBase implements ContainerInjectionInterfac
   }
 
   /**
+   * Function to view saved searches.
+   */
+  public function savedSearches() {
+
+    return [
+      '#theme' => 'udb3_saved_searches',
+      '#attached' => [
+        'library' => [
+          'culturefeed_udb3_app/udb3-angular',
+        ],
+      ],
+    ];
+
+  }
+
+  /**
    * Function to view an event detail.
    */
   public function viewEvent($id) {
