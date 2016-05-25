@@ -106,6 +106,14 @@ culturefeed_udb3_app.view.place:
   requirements:
     _culturefeed_current_user: 'TRUE'
 
+culturefeed_udb3_app.saved_searches:
+  path: '/udb3/saved-searches'
+  defaults:
+    _title: 'Mijn zoekopdrachten'
+    _controller: '\Drupal\culturefeed_udb3_app\Controller\AppController::savedSearches'
+  requirements:
+    _culturefeed_current_user: 'TRUE'
+
 culturefeed_udb3_app.user:
   path: '/udb3/api/1.0/user'
   defaults:
