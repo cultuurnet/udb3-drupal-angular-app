@@ -25,6 +25,7 @@
     .constant('moment', moment)
     .constant('eventId', settings.eventId || null)
     .constant('placeId', settings.placeId || null)
+    .constant('offerId', settings.offerId || null)
     .constant('offerType', settings.offerType || null);
 
   udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
