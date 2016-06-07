@@ -1,6 +1,20 @@
 (function(settings) {
   'use strict';
 
+  var initInjector = angular.injector(['ng']);
+  var $q = initInjector.get('$q');
+  function settingResolverFactory($q) {
+    return function(settingReference) {
+      var settingValue = settings[settingReference];
+      if (settingValue) {
+        return $q.resolve(settingValue)
+      } else {
+        return $q.reject('No value found for setting with reference: ' + settingReference);
+      }
+    };
+  }
+  var promiseSetting = settingResolverFactory($q);
+
   /**
    * @ngdoc overview
    * @name udbApp
@@ -23,10 +37,9 @@
     })
     .constant('appConfig', settings.appConfig)
     .constant('moment', moment)
-    .constant('eventId', settings.eventId || null)
-    .constant('placeId', settings.placeId || null)
-    .constant('offerId', settings.offerId || null)
-    .constant('offerType', settings.offerType || null);
+    .constant('eventId', promiseSetting('eventId'))
+    .constant('placeId', promiseSetting('placeId'))
+    .constant('offerId', promiseSetting('offerId'));
 
   udbAppConfig.$inject = ['$sceDelegateProvider', '$translateProvider', 'uiSelectConfig', 'appConfig',
     'queryFieldTranslations', 'dutchTranslations'];
