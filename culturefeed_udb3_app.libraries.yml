@@ -28,6 +28,8 @@ udb3-angular:
     bower_components/levenshtein/lib/levenshtein.js: {}
     bower_components/udb3-angular/dist/udb3-angular.js: {}
     bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js: {}
+    bower_components/rxjs/dist/rx.all.js: {}
+    bower_components/rx-angular/dist/rx.angular.js: {}
     angular/app.js: {}
     angular/drupal-router.module.js: {}
     angular/ga-tag-manager.module.js: {}
