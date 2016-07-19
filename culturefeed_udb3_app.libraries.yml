@@ -31,6 +31,8 @@ udb3-angular:
     bower_components/rxjs/dist/rx.all.js: {}
     bower_components/rx-angular/dist/rx.angular.js: {}
     bower_components/es6-shim/es6-shim.js: {}
+    bower_components/angular-ui-router/release/angular-ui-router.js: {}
+    bower_components/ng-focus-if/focusIf.js: {}
     angular/url-shim.js: {}
     angular/app.js: {}
     angular/drupal-router.module.js: {}
